@@ -1,0 +1,10 @@
+<ion-view view-title="Tip Map">
+  <ion-content scroll="false">
+    <map on-create="mapCreated(map)" lat="{{ tip.location.lat }}" lon="{{ tip.location.lon }}"
+         acc="{{ tip.location.acc }}"></map>
+  </ion-content>
+
+  <ion-footer-bar class="bar-stable">
+    <a ng-click="centerOnMe()" class="button button-icon icon ion-navigate"></a>
+  </ion-footer-bar>
+</ion-view>

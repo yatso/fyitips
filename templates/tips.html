@@ -1,0 +1,38 @@
+<ion-view view-title="FYI TIPS <span style='font-size: 0.75em; color: grey; font-style: italic;'>beta</span>">
+  <ion-header-bar class="bar-stable bar-subheader" align-title="center">
+    <h2 class="title" style="font-size: 0.75em">DISPLAYING LATEST TIPS NEAR <span style="font-weight: 600; font-style: italic;">42-FREMONT</span></h2>
+  </ion-header-bar>
+  <ion-content>
+    <ion-list>
+      <ion-item class="item-avatar item-text-wrap" ng-repeat="tip in tips | orderBy: '-post_dt' track by tip.$id">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGYAAABmCAMAAAAOARRQAAAAgVBMVEX///8zMzMwMDAsLCwtLS0mJib4+PgfHx8aGhr8/PwlJSX29vbq6uopKSnw8PBISEg6OjrNzc1BQUGsrKze3t5WVlbCwsJjY2O0tLQNDQ1OTk59fX1sbGyEhIRzc3Obm5vV1dWmpqa6urrGxsaQkJCDg4NnZ2fa2tpcXFyNjY2Xl5dU8/2FAAAD4klEQVRogd2aa1ejMBCGSQIEAuFOi4CFUq3V//8DF9zWuiXA5OLZPfsev6jHPmcmk7lFy5JREIVhkaZFGEaB1B9KKEyrpsbUo+MXjpsqDX8CcmwTxjG6CnOWtEfTIL+rMfliXEkE1x++SciQsAfGlcSSwRgo6JAtgkyyUWcoGKKGC025HVJj5ITcxlmGTHIaA/b4LxuUkfPuamNyvOKxq9/soy6lQJuUkYN7TcyBb1MQ4q0epScQCkLkpEPxGyjmoBMFaQw4mUk40zHnuBnMNzkawRYdgD4bvdaq54IC6rPJa4Uy5sSgFITYoEoB5Jm7+LNqRfDhRzMezlkZs18sM3PZpTKmBkfAFAOqF9RNJDCIKGMkAg0hT7W4uZ4M5ilSxYCKwJc1//rZwHPNGGmJKsa/SNwbrH5vXiUOhxyU289cJnV2qhQrpXAM3SljZOpN8qaMGbtnKEanelo5uBJwncYzheZoHKcaGLcFmmOfVTPapz6g7eCLDsXqoU7T8dmoGpRv7FqPYg2gG0qVu6erggvgdEipPRam29MasrXGjk8BMgFvtKL5t07Zhjk4U8+ad/lbcyFXrzTfVay3BDhRnwX+0GCvbTmwbjB/qVtxG1evmo+KmsVqzUxE2U3heeGS2nujm7teHAYY9SYpliW+pPbeLMXaCVOoRtckViTEeIauzB0jrDuewTD7jRGGNDWN6YUjFdWszTOJWxz+bJYyiNMNjo16rVqqOfzVHCdtl0sBvuQmqo0fVrX3+DrwXTZl772mSW7fxWyzU3PsttK4p/7QxA6o7ST88q7YEAR5ida89eA7kpSV/CwdVhmVmKPRtFuncSVXfaLhTGVWDzcS3Q8S0ZAekMTC7rsIaqEdqPsicSYC0DPEIH9Xix+4oMJOth0LwcfyAxcYRN43DAob2EXZEGtXtwRpKbVCWxaJV27rKVEMsLns5Z63z7SP5S6MFiK7L43ZMskWbyQi2PsWXPwsSj25Ycq0x5lXvAK2AZCR6LEll1jRQUXzGUbmdQMqcphhpHbOQOFkhnkyT0Ho6T/HSL1uQOX9rRDY/0RAz0fT009cz3mSjlrzOa0V1Oo0NpzUFirBTrU5E4ss1c+3Ur+ruclGZS+mjI1gvl/7zx24sHM5rm1Zi2NCtV1HaNJtzDt+uGsp5WuLulUzMGHeeQghg6JfHco4ISNLBoZtzlFWHnKJKSfoq+51HycOczjBeJk3/c7mDmMouzQfeSo/hbphn56q7rkt4yzBjjeKUsaY44yfSikdv2cEZXF9Hj9/d+oLndW67wZRFIWTij7dDdWx6455NX7s2+cPx18GweZR/ALTJT1H3el3QwAAAABJRU5ErkJggg==" style="top: 45px">
+        <time style="font-size: 0.75em">{{tip.post_dt | date:'MMM dd, yyyy \| hh:mm a'}}</time>
+<!--        <a ng-if="tip.location" ui-sref="tip-map({ tipId: tip.$id })">location</a>-->
+        <p>FYI, {{tip.text}}</p>
+<!--         <div class="tags">
+          <span ng-repeat="tag in tip.tags" style="font-size: 0.75em; color: grey">
+            #{{tag}}
+          </span>
+        </div> -->
+<!--         <div style="font-size: 0.75em; color: grey">
+          {{tip.comments}} <u>Comments</u> &nbsp;
+          {{tip.likes}} <u>Likes</u>
+        </div> -->
+<!--        <div style="margin-top: 20px">-->
+          <!-- <button class="button button-small button-dark">&nbsp;Share&nbsp;</button>&nbsp;
+          <button class="button button-small button-dark">&nbsp;Save&nbsp;</button>&nbsp; -->
+          <!-- <button class="button button-small button-dark" ng-click="deleteTip(tip)">&nbsp;<i class="icon ion-trash-b"></i> Delete&nbsp;</button>&nbsp; -->
+          <!-- <button class="button button-small button-dark">&nbsp;Flag&nbsp;</button> -->
+<!--        </div>-->
+         <div style="margin-bottom: 30px">
+             
+         </div>
+      </ion-item>
+    </ion-list>
+    <p>
+      <button class="button button-assertive" ng-click="clearRemoteTips()">&nbsp;Clear remote storage&nbsp;</button>
+    </p>
+  </ion-content>
+  <button class="button button-icon icon ion-plus-circled button-compose-float assertive" ng-click="addTip()">
+  </button>
+</ion-view>
